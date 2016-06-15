@@ -1,0 +1,18 @@
+# npm log
+npm-debug.log
+
+# Downloaded components and modules
+node_modules
+
+# Typing #
+/src/typings/tsd/
+/typings/
+/tsd_typings/
+
+# Generated files
+public/css/*
+public/js/*
+
+# Sublime Text files
+*.sublime-workspace
+*.sublime-project
