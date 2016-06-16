@@ -10,8 +10,7 @@ node_modules
 /tsd_typings/
 
 # Generated files
-public/css/*
-public/js/*
+build
 
 # Sublime Text files
 *.sublime-workspace
