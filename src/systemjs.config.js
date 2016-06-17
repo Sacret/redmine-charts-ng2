@@ -4,7 +4,8 @@
   var map = {
     'app': 'app',
     'rxjs': 'lib/rxjs',
-    '@angular': 'lib/@angular'
+    '@angular': 'lib/@angular',
+    '@angular2-material': 'lib/@angular2-material'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
@@ -23,7 +24,8 @@
     '@angular/router',
     '@angular/router-deprecated',
     '@angular/testing',
-    '@angular/upgrade'
+    '@angular/upgrade',
+    '@angular2-material/input',
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
