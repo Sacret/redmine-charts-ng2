@@ -14,6 +14,7 @@ const tsProject = ts.createProject('tsconfig.json');
 const paths = {
   build: 'build',
   src: 'src',
+  node_modules: 'node_modules',
   sass: '**/*.scss',
   ts: '**/*.ts'
 };
@@ -56,7 +57,8 @@ gulp.task('libs', () => {
     'reflect-metadata/Reflect.js',
     'rxjs/**',
     'zone.js/dist/**',
-    '@angular/**'
+    '@angular/**',
+    '@angular2-material/**'
   ], { cwd: 'node_modules/**' }) /* Glob required here. */
     .pipe(gulp.dest(paths.build + '/lib'));
 });
@@ -71,11 +73,30 @@ gulp.task('sass', () => {
 });
 
 /**
+ * Bind CSS files
+ */
+gulp.task('css', () => {
+  const files = [
+    paths.build + '/app.css',
+    paths.node_modules + '/ng2-material/ng2-material.css',
+    paths.node_modules + '/ng2-material/font/font.css'
+  ]
+  gulp.src(files)
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.css'))
+    //.pipe(cssmin())
+    //.on('error', handleErrors)
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.build + '/app'));
+});
+
+/**
  * Watch project canges.
  */
 gulp.task('watch', () => {
-  gulp.watch(paths.src + '/' + paths.sass, ['sass'])
+  gulp.watch(paths.src + '/' + paths.sass, ['sass']);
   gulp.watch(paths.src + '/' + paths.ts, ['compile']);
+  gulp.watch(paths.src + '/**/*.html', ['resources']);
 });
 
 /**
