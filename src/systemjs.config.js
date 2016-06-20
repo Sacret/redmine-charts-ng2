@@ -25,12 +25,20 @@
     '@angular/router-deprecated',
     '@angular/testing',
     '@angular/upgrade',
-    '@angular2-material/input',
+  ];
+
+  var materialPackages = [
+    'core',
+    'input',
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
   packageNames.forEach(function (pkgName) {
     packages[pkgName] = {main: 'index.js', defaultExtension: 'js'};
+  });
+
+  materialPackages.forEach(function (pkgName) {
+    packages[`@angular2-material/${pkgName}`] = {main: `${pkgName}.js`};
   });
 
   var config = {
