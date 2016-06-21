@@ -50,7 +50,7 @@ gulp.task('resources', () => {
  * Copy all required libraries into build directory.
  */
 gulp.task('libs', () => {
-  return gulp.src([
+  gulp.src([
     'es6-shim/es6-shim.min.js',
     'systemjs/dist/system-polyfills.js',
     'systemjs/dist/system.src.js',
@@ -58,9 +58,20 @@ gulp.task('libs', () => {
     'rxjs/**',
     'zone.js/dist/**',
     '@angular/**',
-    '@angular2-material/**'
+    '@angular2-material/**',
+    'ng2-material/**'
   ], { cwd: 'node_modules/**' }) /* Glob required here. */
     .pipe(gulp.dest(paths.build + '/lib'));
+});
+
+/**
+ * Copy all required fonts into build directory.
+ */
+gulp.task('fonts', () => {
+  gulp.src([
+    paths.node_modules + '/ng2-material/font/MaterialIcons-Regular.*'
+  ])
+    .pipe(gulp.dest(paths.build + '/app'));
 });
 
 /**
@@ -102,6 +113,6 @@ gulp.task('watch', () => {
 /**
  * Build the project.
  */
-gulp.task('build', ['compile', 'resources', 'libs', 'sass'], () => {
+gulp.task('build', ['compile', 'resources', 'libs', 'fonts', 'sass'], () => {
   console.log('Building the project ...')
 });
