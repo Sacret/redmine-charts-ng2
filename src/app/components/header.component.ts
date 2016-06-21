@@ -5,6 +5,7 @@ import { MdIcon } from 'ng2-material';
 
 @Component({
   selector: 'header',
+  //styleUrls: ['./app/components/header.scss'],
   templateUrl: './app/components/header.html',
   directives: [MdToolbar, MdIcon]
 })
