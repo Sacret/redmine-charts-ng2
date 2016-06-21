@@ -88,7 +88,7 @@ gulp.task('sass', () => {
  */
 gulp.task('css', () => {
   const files = [
-    paths.build + '/app.css',
+    paths.build + '/**/*.css',
     paths.node_modules + '/ng2-material/ng2-material.css',
     paths.node_modules + '/ng2-material/font/font.css'
   ]
@@ -105,7 +105,7 @@ gulp.task('css', () => {
  * Watch project canges.
  */
 gulp.task('watch', () => {
-  gulp.watch(paths.src + '/' + paths.sass, ['sass']);
+  gulp.watch(paths.src + '/' + paths.sass, ['sass', 'css']);
   gulp.watch(paths.src + '/' + paths.ts, ['compile']);
   gulp.watch(paths.src + '/**/*.html', ['resources']);
 });

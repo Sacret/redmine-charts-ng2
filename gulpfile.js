@@ -10,7 +10,7 @@ var paths = {
     build: 'build',
     src: 'src',
     node_modules: 'node_modules',
-    sass: '**/*.scss',
+    sass: '**/**/*.scss',
     ts: '**/*.ts'
 };
 /**
@@ -76,7 +76,7 @@ gulp.task('sass', function () {
  */
 gulp.task('css', function () {
     var files = [
-        paths.build + '/app.css',
+        paths.build + '/**/*.css',
         paths.node_modules + '/ng2-material/ng2-material.css',
         paths.node_modules + '/ng2-material/font/font.css'
     ];
@@ -90,7 +90,7 @@ gulp.task('css', function () {
  * Watch project canges.
  */
 gulp.task('watch', function () {
-    gulp.watch(paths.src + '/' + paths.sass, ['sass']);
+    gulp.watch(paths.src + '/' + paths.sass, ['sass', 'css']);
     gulp.watch(paths.src + '/' + paths.ts, ['compile']);
     gulp.watch(paths.src + '/**/*.html', ['resources']);
 });
