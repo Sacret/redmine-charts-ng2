@@ -28,24 +28,35 @@
   </div>
 </div>
 -->
-<div layout="row">
-  <md-whiteframe
-    class="md-whiteframe-2dp"
-    flex-xs="100"
-    flex-gt-sm="33"
-  >
-    <md-toolbar class="md-default" color="default">
-      <div class="md-toolbar-layout">
-        <md-toolbar-row>
-          Toolbar Basic Usage
-        </md-toolbar-row>
+<div layout="row" layout-xs="column" layout-align="center center">
+  <div flex></div>
+  <div flex>
+    <md-whiteframe class="md-whiteframe-1dp login-block">
+      <md-toolbar class="md-default" color="default">
+        <div class="md-toolbar-layout">
+          <md-toolbar-row>
+            Sign in and try it!
+          </md-toolbar-row>
+        </div>
+      </md-toolbar>
+      <div layout="column" class="md-inline-form login-form">
+        <form>
+          <md-input
+            class="demo-full-width"
+            disabled
+            placeholder="Your redmine URL (disabled)"
+            value="http://www.redmine.pfrus.com/">
+          </md-input>
+          <md-input
+            class="demo-full-width"
+            placeholder="API key">
+          </md-input>
+          <div layout="row" layout-align="end center">
+            <button md-raised-button class="md-raised md-primary">Sign in</button>
+          </div>
+        </form>
       </div>
-    </md-toolbar>
-  </md-whiteframe>
-  <button md-raised-button class="md-raised">Login3</button>
-  <md-input
-    class="demo-full-width"
-    placeholder="Company (disabled)"
-    value="Google">
-  </md-input>
+    </md-whiteframe>
+  </div>
+  <div flex></div>
 </div>
