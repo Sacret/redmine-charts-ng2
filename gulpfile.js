@@ -10,7 +10,7 @@ var paths = {
     build: 'build',
     src: 'src',
     node_modules: 'node_modules',
-    sass: '**/**/*.scss',
+    sass: '**/*.scss',
     ts: '**/*.ts'
 };
 /**
